@@ -97,6 +97,27 @@
     .toc ul li a:hover {
         text-decoration: underline;
     }
+    .spectrogram-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .spectrogram-item {
+        text-align: center;
+        flex: 1;
+        margin: 0 10px;
+    }
+    .spectrogram-item img {
+        width: 100%;
+        height: auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    audio {
+        margin-top: 10px;
+        width: 100%;
+    }
   </style>
 </head>
 
@@ -112,6 +133,8 @@
         <li><a href="#section1">Application 1: Video to Context-Aware Text-to-Speech Synthesis (Section 3.4).</a></li>
         
         <li><a href="#section2">Application 2: Immersive Audio Background Conversion (Section 3.5).</a></li>
+
+        <li><a href="#section3"> Audio samples for our empirical finding (Section 2.1).</a></li>
 
         <li><a href=""> Implementation Codes (Coming soon).</a></li>
     
@@ -130,8 +153,55 @@
       <th>VATT</th>
     </tr>
 
+      <td>
+        <video controls>
+          <source src="./sample1/video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video controls>
+          <source src="./sample1/prompt.wav" type="audio/wav">
+        </video>
+        <h3>Transcript: Good football team to open goals here. What a way to do it. Well, we had one goal come to this team. To make sure 16 teams left.</h3>
+      </td>
+      <td>
+        <video controls>
+          <source src="./sample1/demo.mp4" type="video/mp4">
+        </video>
+      </td>
+      <td>
+        <video controls>
+          <source src="./sample1/vatt.mp4" type="video/mp4">
+        </video>
+      </td>
+    </tr>
 
-
+    <tr>
+      <td>
+        <video controls>
+          <source src="./sample9/video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <video controls>
+          <source src="./sample9/prompt.wav" type="audio/wav">
+        </video>
+        <h3>Transcript: Good boy. Good boy. Come on. Good boy. That's a good boy.</h3>
+      </td>
+      <td>
+        <video controls>
+          <source src="./sample9/demo.mp4" type="video/mp4">
+        </video>
+      </td>
+      <td>
+        <video controls>
+          <source src="./sample9/vatt.mp4" type="video/mp4">
+        </video>
+      </td>
+    </tr>
+    <tr>
     <!-- Row 1 -->
     <tr>
       <td>
@@ -140,6 +210,7 @@
           Your browser does not support the video tag.
         </video>
       </td>
+
       <td>
         <video controls>
           <source src="./sample18/prompt.wav" type="audio/wav">
@@ -281,54 +352,6 @@
       <td>
         <video controls>
           <source src="./sample8/vatt.mp4" type="video/mp4">
-        </video>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <video controls>
-          <source src="./sample9/video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </td>
-      <td>
-        <video controls>
-          <source src="./sample9/prompt.wav" type="audio/wav">
-        </video>
-        <h3>Transcript: Good boy. Good boy. Come on. Good boy. That's a good boy.</h3>
-      </td>
-      <td>
-        <video controls>
-          <source src="./sample9/demo.mp4" type="video/mp4">
-        </video>
-      </td>
-      <td>
-        <video controls>
-          <source src="./sample9/vatt.mp4" type="video/mp4">
-        </video>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <video controls>
-          <source src="./sample1/video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </td>
-      <td>
-        <video controls>
-          <source src="./sample1/prompt.wav" type="audio/wav">
-        </video>
-        <h3>Transcript: Good football team to open goals here. What a way to do it. Well, we had one goal come to this team. To make sure 16 teams left.</h3>
-      </td>
-      <td>
-        <video controls>
-          <source src="./sample1/demo.mp4" type="video/mp4">
-        </video>
-      </td>
-      <td>
-        <video controls>
-          <source src="./sample1/vatt.mp4" type="video/mp4">
         </video>
       </td>
     </tr>
@@ -511,6 +534,43 @@
       </td>
     </tr>
   </table>
+<hr>
+<h1 id="section3"> Audio samples for our empirical finding</h1>
+<p>This section provide the audio samples that used to plot our Figure 3.</p>
+<div class="spectrogram-container">
+  <div class="spectrogram-item">
+      <p>Ground Truth</p>
+      <img src="./sample19/Mel_GT.png" alt="Spectrogram GT">
+      <audio controls>
+          <source src="./sample19/IP-DHA2b660_30000_40000.wav"  type="audio/mpeg">
+          Your browser does not support the audio element.
+      </audio>
+  </div>
+  <div class="spectrogram-item">
+      <p>Reconstructed sample of audio semantic token</p>
+      <img src="./sample19/Mel_rec.png" alt="Spectrogram rec">
+      <audio controls>
+          <source src="./sample19/IP-DHA2b660_30000_40000_rec.wav"  type="audio/mpeg">
+          Your browser does not support the audio element.
+      </audio>
+  </div>
+  <div class="spectrogram-item">
+      <p>Generated sample of speech SSL token</p>
+      <img src="./sample19/Mel_speech.png" alt="Spectrogram speech">
+      <audio controls>
+          <source src="./sample19/IP-DHA2b660_30000_40000_speech.wav"  type="audio/mpeg">
+          Your browser does not support the audio element.
+      </audio>
+  </div>
+  <div class="spectrogram-item">
+      <p>Generated sample of the residual embedding of audio semantic token and speech SSL token</p>
+      <img src="./sample19/Mel_res.png" alt="Spectrogram residual">
+      <audio controls>
+         <source src="./sample19/IP-DHA2b660_30000_40000_gct_residual.wav"  type="audio/mpeg">
+          Your browser does not support the audio element.
+      </audio>
+  </div>
+</div>
 <hr>
 <h3>Reference:</h3>
 [1] Liu, Xiulong, Kun Su, and Eli Shlizerman. "Tell what you hear from what you see-video to audio generation through text." Advances in Neural Information Processing Systems 37 (2024): 101337-101366.
